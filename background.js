@@ -47,13 +47,16 @@ chrome.tabs.onMoved.addListener(function (tabId, moveInfo) {
 });
 
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-    const { width,windowId } = tab;
-    if(isHandledTabs(tabId,windowId))return
-	if (width > 1440) {
-		chrome.tabs.setZoom(tabId, 1.25);
-	} else {
-		chrome.tabs.setZoom(tabId, 1);
-	}
+    if(changeInfo.status === 'complete'){
+        const { width,windowId } = tab;
+        if(isHandledTabs(tabId,windowId))return
+        if (width > 1440) {
+            chrome.tabs.setZoom(tabId, 1.25);
+        } else {
+            chrome.tabs.setZoom(tabId, 1);
+        }
+    } 
+   
 });
 
 chrome.tabs.onRemoved.addListener((tabId)=>{
