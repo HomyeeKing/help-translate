@@ -4,6 +4,7 @@
 	"description": "右键翻译选中单词",
 	"permissions": [
         "contextMenus",
+        "tabs",
 		"http://*/*",
 		"https://*/*",
         "file:///*"
@@ -21,7 +22,6 @@
 	},
 	"options_ui": {
         "page": "options.html",
-        "run_at":"document_start",
 		"open_in_tab": false 
     },
    
