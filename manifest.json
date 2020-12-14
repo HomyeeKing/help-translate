@@ -1,13 +1,12 @@
 {
-	"name": "Zoom",
+	"name": "Help Translate",
 	"version": "1.0",
-	"description": "Control zoom size in different device",
+	"description": "右键翻译选中单词",
 	"permissions": [
-		"tabs",
-		"activeTab",
+        "contextMenus",
 		"http://*/*",
 		"https://*/*",
-		"file:///*"
+        "file:///*"
 	],
 	"background": {
 		"scripts": ["background.js"],
@@ -15,11 +14,16 @@
 	},
 	"browser_action": {
 		"default_icon": {
-			"16": "images/zoomX16.png",
-			"32": "images/zoomX32.png",
-			"48": "images/zoomX48.png",
-			"64": "images/zoomX64.png"
+			"16": "images/dog-16.png",
+			"48": "images/dog-48.png",
+			"128": "images/dog-128.png"
 		}
 	},
+	"options_ui": {
+        "page": "options.html",
+        "run_at":"document_start",
+		"open_in_tab": false 
+    },
+   
 	"manifest_version": 2
 }
